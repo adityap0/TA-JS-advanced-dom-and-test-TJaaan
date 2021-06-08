@@ -7,5 +7,4 @@
 - When you are displaying the quotes don't forget to add the author name also
 - Using the lifecycle events like `DOMContentLoaded` display a alert message saying the `The content of the DOM is loaded`
 - You can use the image given below for help to understand.
-
-![](./terms.png)
+  ![](./terms.png)
