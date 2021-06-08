@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (e) => {
-  alert(`Page is Loaded`);
+  alert(`The content of the DOM is loaded`);
   let rootUl = document.querySelector("ul");
   quotes.forEach((element, i) => {
     if (i < 3) {
