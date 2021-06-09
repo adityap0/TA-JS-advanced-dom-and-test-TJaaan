@@ -175,7 +175,7 @@ table {
   width: 28%;
 }
 
-.drop-box div {
+.drop-box .drop {
   margin: 50px 0;
   height: 100px;
   border: 1px solid;
