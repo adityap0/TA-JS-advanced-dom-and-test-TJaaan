@@ -10,5 +10,9 @@
   "license": "GNU GPL V3",
   "dependencies": {
     "jest": "^26.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.28.0",
+    "eslint-config-google": "^0.14.0"
   }
 }

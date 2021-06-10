@@ -21,6 +21,19 @@ if (true) {
 }
 ```
 
+<!-- const count = 1;
+if (true) {
+  count += 1;
+}
+console.log(count);
+
+const countX = 1;
+if (true) {
+  countX += 1;
+}
+console.log(countX);
+//  count has already been declared -->
+
 #### Fix the following code given below by following the rules of Airbnb Style Guide. Use ESLint to find the error
 
 1.
@@ -36,6 +49,18 @@ var num2 = increasePassedNumber(num1);
 
 console.log(num1);
 console.log(num2);
+
+// const num = 10;
+
+// const increaseNumber = () => num++;
+// const increasePassedNumber = (number) => number++;
+
+// const num1 = increaseNumber();
+// const num2 = increasePassedNumber(num1);
+
+// console.log(num1);
+// console.log(num2);
+// // use const instead of var
 ```
 
 2.
@@ -50,9 +75,7 @@ var animalMethods = {
     return this.location;
   },
   summary: function () {
-    console.log(
-      `I live in ${this.location} and I have ${this.numberOfLegs}`
-    );
+    console.log(`I live in ${this.location} and I have ${this.numberOfLegs}`);
   },
 };
 
@@ -90,12 +113,7 @@ var dogsMethods = {
 
 Object.setPrototypeOf(dogsMethods, animalMethods);
 
-function createCat(
-  location,
-  numberOfLegs,
-  name,
-  colorOfEyes
-) {
+function createCat(location, numberOfLegs, name, colorOfEyes) {
   let obj = createAnimal(location, numberOfLegs);
   Object.setPrototypeOf(obj, catsMethods);
   obj.name = name;
@@ -122,11 +140,89 @@ let catsMethods = {
 Object.setPrototypeOf(catsMethods, animalMethods);
 ```
 
+<!-- /* eslint-disable space-before-function-paren */
+/* eslint-disable max-len */
+/* eslint-disable no-unused-vars */
+/* eslint-disable require-jsdoc */
+const animalMethods = {
+  eat: function () {
+    console.log(`I live in ${this.location} and I can eat`);
+  },
+  changeLocation: function (newLocation) {
+    this.location = newLocation;
+    return this.location;
+  },
+  summary: function () {
+    console.log(`I live in ${this.location} and I have ${this.numberOfLegs}`);
+  },
+};
+
+function createAnimal(location, numberOfLegs) {
+  const obj = Object.create(animalMethods);
+  obj.location = location;
+  obj.numberOfLegs = numberOfLegs;
+  return obj;
+}
+
+function createDog(location, numberOfLegs, name, color) {
+  const obj = createAnimal(location, numberOfLegs);
+  Object.setPrototypeOf(obj, dogsMethods);
+  obj.name = name;
+  obj.color = color;
+  return obj;
+}
+
+const dogsMethods = {
+  bark() {
+    alert(`I am ${this.name} and I can bark 🐶`);
+  },
+  changeName(name) {
+    this.name = name;
+    return this.name;
+  },
+  changeColor(newColor) {
+    this.color = newColor;
+    return this.color;
+  },
+  summary() {
+    return `I am ${this.name} and I am of ${this.color} color. I can also bark`;
+  },
+};
+
+Object.setPrototypeOf(dogsMethods, animalMethods);
+
+function createCat(location, numberOfLegs, name, colorOfEyes) {
+  const obj = createAnimal(location, numberOfLegs);
+  Object.setPrototypeOf(obj, catsMethods);
+  obj.name = name;
+  obj.color = colorOfEyes;
+  return obj;
+}
+
+const catsMethods = {
+  meow() {
+    alert(`I am ${this.name} and I can do mewo meow 😹`);
+  },
+  changeName(name) {
+    this.name = name;
+    return this.name;
+  },
+  changeColorOfEyes(newColor) {
+    this.colorOfEyes = newColor;
+    return this.colorOfEyes;
+  },
+  summary() {
+    return `I am ${this.name} and the color of my eyes are ${this.colorOfEyes}. I can also do meow meow`;
+  },
+};
+Object.setPrototypeOf(catsMethods, animalMethods);
+ -->
+
 3.
 
 ```js
-const anakinSkywalker = 'Anakin Skywalker';
-const lukeSkywalker = 'Luke Skywalker';
+const anakinSkywalker = "Anakin Skywalker";
+const lukeSkywalker = "Luke Skywalker";
 
 const obj = {
   episodeOne: 1,
@@ -137,6 +233,21 @@ const obj = {
   anakinSkywalker,
 };
 ```
+
+<!-- /* eslint-disable quotes */
+/* eslint-disable no-unused-vars */
+const anakinSkywalker = "Anakin Skywalker";
+const lukeSkywalker = "Luke Skywalker";
+
+const obj = {
+  episodeOne: 1,
+  twoJediWalkIntoACantina: 2,
+  lukeSkywalker,
+  episodeThree: 3,
+  mayTheFourth: 4,
+  anakinSkywalker,
+};
+ -->
 
 4.
 
