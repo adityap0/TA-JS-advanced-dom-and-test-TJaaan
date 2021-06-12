@@ -1,14 +1,34 @@
-function add() {}
+function add(numA, numB) {
+  return numA + numB;
+}
 
-function subtract() {}
+function subtract(numA, numB) {
+  if (numA > numB) {
+    return numA - numB;
+  } else {
+    return numB - numA;
+  }
+}
 
-function sum() {}
+function sum(numA, numB) {
+  return numA + numB;
+}
 
-function multiply() {}
+function multiply(numA, numB) {
+  return numA * numB;
+}
 
-function power() {}
+function power(numA, numB) {
+  return Math.pow(numA, numB);
+}
 
-function factorial() {}
+function factorial(n) {
+  let fact = 1;
+  for (let i = n; i > 0; i--) {
+    fact = fact * i;
+  }
+  return fact;
+}
 
 module.exports = {
   add,

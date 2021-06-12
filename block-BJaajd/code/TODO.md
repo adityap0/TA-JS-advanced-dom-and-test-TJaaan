@@ -9,7 +9,6 @@ class Cart {
   constructor() {
     this.items = [];
   }
-
   addToCart(item) {
     this.items.push(item);
   }
@@ -21,7 +20,15 @@ class Cart {
 3. Implement a function that takes an array and some other arguments then removes the other arguments from that array:
 
 ```js
-function removeFromArray() {}
+function removeFromArray(arr, itm2rmv) {
+  let finalArr = arr.reduce((acc, cv) => {
+    if (cv !== itm2rmv) {
+      acc.push(cv);
+    }
+    return acc;
+  }, []);
+  return finalArr;
+}
 
 removeFromArray([1, 2, 3, 4], 3); // should remove 3 and return [1,2,4]
 ```
