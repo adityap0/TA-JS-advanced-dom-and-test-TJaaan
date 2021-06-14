@@ -29,7 +29,7 @@ function removeFromArray(arr, itm2rmv) {
   }, []);
   return finalArr;
 }
-
+//
 removeFromArray([1, 2, 3, 4], 3); // should remove 3 and return [1,2,4]
 ```
 
